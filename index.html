@@ -1,1 +1,38 @@
-﻿Hello World!
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.maphilight.min.js"></script>	
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	
+		<link rel=stylesheet type="text/css" href="css/test.css">
+		
+		
+	</head>
+	<body>
+		
+		<p> Hello World! </p>
+		<img src="demo_features.png" class="map" >
+		
+        <p>Type country name in english:</p>
+        <div>
+            <input type="text" id="autocomplete-ajax" class="inputText" value="請輸入學校名稱" onfocus="this.value=''"/>
+        </div>
+		<input type="button" class="myButton" value="即時送出" />
+
+
+	</body>
+	
+	
+	<script type="text/javascript" src="js/values.js"></script>	
+	
+	<script type="text/javascript">
+		
+		$( "#autocomplete-ajax" ).autocomplete({
+		  source: values
+		});
+	</script>
+	
+	
+</html>
