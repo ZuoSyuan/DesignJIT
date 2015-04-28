@@ -2,25 +2,40 @@
 <html>
 	<head>
 		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-		<script type="text/javascript" src="js/jquery.maphilight.min.js"></script>	
-		<link rel="stylesheet" href="css/jquery-ui.css">
+		<link rel="stylesheet" href="css/jquery-ui-autocomplete.css">
 		<script src="js/jquery-ui.js"></script>
 	
-		<link rel=stylesheet type="text/css" href="css/test.css">
+		<link rel=stylesheet type="text/css" href="css/styles.css">
 		
 		
 	</head>
-	<body>
-		
-		<p> Hello World! </p>
-		<img src="demo_features.png" class="map" >
-		
-        <p>Type country name in english:</p>
-        <div>
-            <input type="text" id="autocomplete-ajax" class="inputText" value="請輸入學校名稱" onfocus="this.value=''"/>
-        </div>
-		<input type="button" class="myButton" value="即時送出" />
-
+	<body background="img/background.png">
+		<div class="centerGroup">
+			<div class="logosDiv">
+				<img class="logo" src="img/leftLogo.png" />
+				<img class="logo" src="img/rightLogo.jpg" />
+			</div>
+			<div class="sloganDiv">
+				<label class="slogan" >人人評審來投票</label>
+			</div>
+		</div>
+	
+		<div class="centerGroup">
+			<div class="inputDiv">
+				<input type="text" id="University" class="inputText" value="請輸入學校名稱" onfocus="this.value=''"/>
+			</div>
+			<div class="inputDiv">
+				<input type="text" id="College" class="inputText" value="請輸入就讀系所名稱" onfocus="this.value=''"/>
+			</div>
+			<div class="inputDiv">
+				<input type="text" id="Work" class="inputText" value="請輸入設計作品名稱" onfocus="this.value=''"/>
+			</div>
+			
+			
+			<div class="inputTextDiv">
+			<input type="button" class="sendButton" value="即時送出" onclick="send();"/>
+			</div>
+		</div>
 
 	</body>
 	
@@ -28,11 +43,22 @@
 	<script type="text/javascript" src="js/values.js"></script>	
 	
 	<script type="text/javascript">
+		function send(){
+			var University = $( "#University" ).val();
+			var College = $( "#College" ).val();
+			var Work = $( "#Work" ).val();
+			
+			var url = 	"https://docs.google.com/forms/d/1vnCtNvQiDtedELATDg-17CuoLCRhGwYp3OdMZxeTSQ4/formResponse" +
+						"?entry.1733193242=" + escape(University) + 
+						"&entry.1328942373=" + escape(College) +
+						"&entry.2106173070=" + escape(Work) +
+						"&submit=Submit";
+						
+			$.getScript(url);
+		}
 		
-		$( "#autocomplete-ajax" ).autocomplete({
+		$( "#University" ).autocomplete({
 		  source: values
 		});
 	</script>
-	
-	
 </html>

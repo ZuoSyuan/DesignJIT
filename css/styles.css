@@ -1,0 +1,100 @@
+
+.logo{
+	height: 150px;
+	width: 150px;
+    display: inline-block;
+}
+
+.logosDiv{
+    display: inline-block;
+    margin: 0 40px 0 0;
+}
+
+.slogan{
+    font-family: 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', arial, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+	letter-spacing: 28px;
+    color: #ffffff;
+}
+.sloganDiv{
+	padding-top: 30px;
+	padding-bottom: 10px;
+
+}
+.centerGroup {
+	text-align: center;
+}
+
+.inputDiv{
+	padding-top: 20px;
+}
+
+
+.inputTextDiv{
+	padding-top: 40px;
+}
+
+.inputText {
+    background: #a0a0a0;
+    color: #ffffff;
+    padding: 6px 15px 6px 35px;
+    font-family: 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', arial, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 600;
+}
+
+.inputText:focus {
+    background: #DFE9EC;
+    color: #414848;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.inputText:hover {
+    background: #DFE9EC;
+    color: #414848;
+}
+
+
+.sendButton {
+	background-color:#ff8c3e;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+}
+
+.sendButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+@media screen and (min-width: 800px) {
+	.map {
+		width:300px;
+		height:301px;
+		position:relative;
+		display:inline-block;
+	}
+}
+
+@media screen and (max-width: 800px) {  
+
+	.map {
+		width:150px;
+		height:150px;
+		position:relative;
+		display:inline-block;
+	}
+}
