@@ -28,20 +28,36 @@ body {
 }
 .sloganDiv{
 	padding-top: 30px;
-	padding-bottom: 10px;
+	padding-bottom: 60px;
 
 }
+
+.coverText{
+    font-family: 'Helvetica Neue', Helvetica, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'ＭＳ Ｐゴシック', arial, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-variant: normal;
+    color: #ffffff;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	display: block; 
+	width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
 .centerGroup {
 	text-align: center;
 }
 
 .inputDiv{
-	padding-top: 20px;
+	padding-top: 30px;
 }
 
 
 .inputTextDiv{
-	padding-top: 40px;
+	padding-top: 100px;
 }
 
 .inputText {

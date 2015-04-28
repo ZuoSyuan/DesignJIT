@@ -21,19 +21,17 @@
 		</div>
 	
 		<div class="centerGroup">
-			<div class="inputDiv">
-				<input type="text" id="University" class="inputText" value="請輸入學校名稱" onfocus="this.value=''"/>
+			<div id="contentDiv">
+
+				<label class="coverText">	「新一代設計展」是全世界以學生為主最大型之設計展覽，今年雖有全新的金點新秀設計獎，即時設計開放此活動【人人評審來投票】，在專業的評審提供犀利見解之餘，讓人人都有機會選出自己心目中的最佳設計，也借此讓更多人能參與此盛世。
+				</label>
+				<label class="coverText">
+					【人人評審來投票】投票項目僅就產品設計類 / 工藝設計類 項目做線上觀者評選，準備好選出心目中的新秀金獎了嗎？！
+				</label>
 			</div>
-			<div class="inputDiv">
-				<input type="text" id="College" class="inputText" value="請輸入就讀系所名稱" onfocus="this.value=''"/>
-			</div>
-			<div class="inputDiv">
-				<input type="text" id="Work" class="inputText" value="請輸入設計作品名稱" onfocus="this.value=''"/>
-			</div>
-			
-			
-			<div class="inputTextDiv">
-			<input type="button" class="sendButton" value="即時送出" onclick="send();"/>
+				
+			<div id="inputTextDiv" class="inputTextDiv">
+				<input type="button" class="sendButton" value="開始投票" onclick="start();"/>
 			</div>
 		</div>
 
@@ -43,6 +41,15 @@
 	<script type="text/javascript" src="js/values.js"></script>	
 	
 	<script type="text/javascript">
+		var inputHtmlStr = "<div class=\"inputDiv\"><input type=\"text\" id=\"University\" class=\"inputText\" value=\"請輸入學校名稱\" onfocus=\"this.value=''\"/></div><div class=\"inputDiv\"><input type=\"text\" id=\"College\" class=\"inputText\" value=\"請輸入就讀系所名稱\" onfocus=\"this.value=''\"/></div><div class=\"inputDiv\"><input type=\"text\" id=\"Work\" class=\"inputText\" value=\"請輸入設計作品名稱\" onfocus=\"this.value=''\"/></div>";
+		
+		var sendBtnHtmlStr = "<input type=\"button\" class=\"sendButton\" value=\"即時送出\" onclick=\"send();\"/>";
+	
+		function start(){
+			$("#contentDiv").html(inputHtmlStr);
+			$("#inputTextDiv").html(sendBtnHtmlStr);
+		}
+		
 		function send(){
 			var University = $( "#University" ).val();
 			var College = $( "#College" ).val();

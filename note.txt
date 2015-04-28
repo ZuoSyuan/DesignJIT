@@ -30,3 +30,21 @@ entry.1328942373
 entry.2106173070
 
 https://docs.google.com/forms/d/1vnCtNvQiDtedELATDg-17CuoLCRhGwYp3OdMZxeTSQ4/formResponse?entry.1733193242=NCKU&entry.1328942373=CS&entry.2106173070=what&submit=Submit
+
+
+
+				<div class="inputDiv">
+					<input type="text" id="University" class="inputText" value="請輸入學校名稱" onfocus="this.value=''"/>
+				</div>
+				<div class="inputDiv">
+					<input type="text" id="College" class="inputText" value="請輸入就讀系所名稱" onfocus="this.value=''"/>
+				</div>
+				<div class="inputDiv">
+					<input type="text" id="Work" class="inputText" value="請輸入設計作品名稱" onfocus="this.value=''"/>
+				</div>
+
+"<div class="inputDiv"><input type="text" id="University" class="inputText" value="請輸入學校名稱" onfocus="this.value=''"/></div><div class="inputDiv"><input type="text" id="College" class="inputText" value="請輸入就讀系所名稱" onfocus="this.value=''"/></div><div class="inputDiv"><input type="text" id="Work" class="inputText" value="請輸入設計作品名稱" onfocus="this.value=''"/></div>"
+
+"<input type=\"button\" class=\"sendButton\" value=\"即時送出\" onclick=\"send();\"/>"
+
+
