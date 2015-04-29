@@ -15,15 +15,15 @@
 				<img class="logo" src="img/leftLogo.png" />
 				<img class="logo" src="img/rightLogo.jpg" />
 			</div>
-			<div class="sloganDiv">
-				<label class="slogan" >人人評審來投票</label>
+			<div id="sloganDiv" class="sloganDiv">
+				<label class="slogan" >　人人評審來投票</label>
 			</div>
 		</div>
 	
 		<div class="centerGroup">
 			<div id="contentDiv">
-
-				<label class="coverText">	「新一代設計展」是全世界以學生為主最大型之設計展覽，今年雖有全新的金點新秀設計獎，即時設計開放此活動【人人評審來投票】，在專業的評審提供犀利見解之餘，讓人人都有機會選出自己心目中的最佳設計，也借此讓更多人能參與此盛世。
+				<label class="coverText">	
+				「新一代設計展」是全世界以學生為主最大型之設計展覽，今年雖有全新的金點新秀設計獎，即時設計開放此活動【人人評審來投票】，在專業的評審提供犀利見解之餘，讓人人都有機會選出自己心目中的最佳設計，也借此讓更多人能參與此盛世。
 				</label>
 				<label class="coverText">
 					【人人評審來投票】投票項目僅就產品設計類 / 工藝設計類 項目做線上觀者評選，準備好選出心目中的新秀金獎了嗎？！
@@ -41,8 +41,22 @@
 	<script type="text/javascript" src="js/values.js"></script>	
 	
 	<script type="text/javascript">
-		var inputHtmlStr = "<div class=\"inputDiv\"><input type=\"text\" id=\"University\" class=\"inputText\" value=\"請輸入學校名稱\" onfocus=\"this.value=''\"/></div><div class=\"inputDiv\"><input type=\"text\" id=\"College\" class=\"inputText\" value=\"請輸入就讀系所名稱\" onfocus=\"this.value=''\"/></div><div class=\"inputDiv\"><input type=\"text\" id=\"Work\" class=\"inputText\" value=\"請輸入設計作品名稱\" onfocus=\"this.value=''\"/></div>";
-		
+	
+		/*
+		<div class="inputDiv">
+			<input type="text" id="University" class="inputText" value="請輸入學校及系所名稱" onfocus="this.value=''"/>
+		</div>
+		<div class="inputDiv">
+			<input type="text" id="College" class="inputText" value="請輸入設計作品名稱" onfocus="this.value=''"/>
+		</div>
+		<div class="inputDiv">
+			<input type="text" id="Work" class="inputText" value="請輸入您的E-Mail信箱地址" onfocus="this.value=''"/>
+		</div>
+		*/
+		var inputHtmlStr = "<div class=\"inputDiv\"><input type=\"text\" id=\"University\" class=\"inputText\" value=\"請輸入學校及系所名稱\" onfocus=\"this.value=''\"/></div><div class=\"inputDiv\"><input type=\"text\" id=\"College\" class=\"inputText\" value=\"請輸入設計作品名稱\" onfocus=\"this.value=''\"/></div><div class=\"inputDiv\"><input type=\"text\" id=\"Work\" class=\"inputText\" value=\"請輸入您的E-Mail信箱地址\" onfocus=\"this.value=''\"/></div>";
+		/*
+		<input type="button\ class="sendButton" value="即時送出" onclick="send();"/>
+		*/
 		var sendBtnHtmlStr = "<input type=\"button\" class=\"sendButton\" value=\"即時送出\" onclick=\"send();\"/>";
 	
 		function start(){
@@ -50,10 +64,28 @@
 			$("#inputTextDiv").html(sendBtnHtmlStr);
 		}
 		
+		/*
+		<label class="completTip">票選成功！</label>
+		*/
+		var compTipHtmlStr = "<label class=\"completTip\">票選成功！</label>";
+		/*
+		<label class="coverText">	
+			票選結果將另行公佈於即時設計網站及粉絲專頁，待結果出爐，我們也會寄信通知您票選結果！
+		</label>
+		<div class="linkText">
+			<a href="#" >進入粉專</a> / <a href="#" >進入官網</a>
+		</div>
+		*/
+		var resultCoverHtmlStr = "<label class=\"coverText\">票選結果將另行公佈於即時設計網站及粉絲專頁，待結果出爐，我們也會寄信通知您票選結果！</label><div class=\"linkText\"><a href=\"#\" >進入粉專</a> / <a href=\"#\" >進入官網</a></div>";
+		
 		function send(){
 			var University = $( "#University" ).val();
 			var College = $( "#College" ).val();
 			var Work = $( "#Work" ).val();
+			
+			if(! (University && College && Work) ){
+				alert("請確實填寫三筆資料。")
+			}
 			
 			var url = 	"https://docs.google.com/forms/d/1vnCtNvQiDtedELATDg-17CuoLCRhGwYp3OdMZxeTSQ4/formResponse" +
 						"?entry.1733193242=" + escape(University) + 
@@ -62,6 +94,10 @@
 						"&submit=Submit";
 						
 			$.getScript(url);
+			
+			$("#sloganDiv").html(compTipHtmlStr);
+			$("#contentDiv").html(resultCoverHtmlStr);
+			$("#inputTextDiv").html("");
 		}
 		
 		$( "#University" ).autocomplete({
