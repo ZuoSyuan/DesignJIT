@@ -121,7 +121,7 @@ body {
     font-style: normal;
     font-variant: normal;
     color: #ffffff;
-	padding-top: 50px;
+	padding-top: 100px;
 	padding-bottom: 30px;
 	display: inline-block; 
 	width: 100%;
@@ -131,9 +131,6 @@ body {
 }
 .linkText a{
     color: #ffffff;
-	font-family: normal;
-	font-style: normal;
-    font-variant: normal;
 }
 
 @media screen and (min-width: 800px) {

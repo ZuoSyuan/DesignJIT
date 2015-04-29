@@ -1,4 +1,8 @@
 ﻿<!DOCTYPE html>
+<!-- 
+	網頁撰寫人: ZuoSyuan Fan (Yshuan)
+-->
+
 <html>
 	<head>
 		<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
@@ -12,8 +16,8 @@
 	<body>
 		<div class="centerGroup">
 			<div class="logosDiv">
-				<img class="logo" src="img/leftLogo.png" />
-				<img class="logo" src="img/rightLogo.jpg" />
+				<a href="#"> <img class="logo" src="img/leftLogo.png" /> </a>
+				<a href="#"> <img class="logo" src="img/rightLogo.jpg" /> </a>
 			</div>
 			<div id="sloganDiv" class="sloganDiv">
 				<label class="slogan" >　人人評審來投票</label>
@@ -47,13 +51,13 @@
 			<input type="text" id="University" class="inputText" value="請輸入學校及系所名稱" onfocus="this.value=''"/>
 		</div>
 		<div class="inputDiv">
-			<input type="text" id="College" class="inputText" value="請輸入設計作品名稱" onfocus="this.value=''"/>
+			<input type="text" id="Work" class="inputText" value="請輸入設計作品名稱" onfocus="this.value=''"/>
 		</div>
 		<div class="inputDiv">
-			<input type="text" id="Work" class="inputText" value="請輸入您的E-Mail信箱地址" onfocus="this.value=''"/>
+			<input type="text" id="Email" class="inputText" value="請輸入您的E-Mail信箱地址" onfocus="this.value=''"/>
 		</div>
 		*/
-		var inputHtmlStr = "<div class=\"inputDiv\"><input type=\"text\" id=\"University\" class=\"inputText\" value=\"請輸入學校及系所名稱\" onfocus=\"this.value=''\"/></div><div class=\"inputDiv\"><input type=\"text\" id=\"College\" class=\"inputText\" value=\"請輸入設計作品名稱\" onfocus=\"this.value=''\"/></div><div class=\"inputDiv\"><input type=\"text\" id=\"Work\" class=\"inputText\" value=\"請輸入您的E-Mail信箱地址\" onfocus=\"this.value=''\"/></div>";
+		var inputHtmlStr = "<div class=\"inputDiv\"><input type=\"text\" id=\"University\" class=\"inputText\" value=\"請輸入學校及系所名稱\" onfocus=\"this.value=''\"/></div><div class=\"inputDiv\"><input type=\"text\" id=\"Work\" class=\"inputText\" value=\"請輸入設計作品名稱\" onfocus=\"this.value=''\"/></div><div class=\"inputDiv\"><input type=\"text\" id=\"Email\" class=\"inputText\" value=\"請輸入您的E-Mail信箱地址\" onfocus=\"this.value=''\"/></div>";
 		/*
 		<input type="button\ class="sendButton" value="即時送出" onclick="send();"/>
 		*/
@@ -80,17 +84,17 @@
 		
 		function send(){
 			var University = $( "#University" ).val();
-			var College = $( "#College" ).val();
 			var Work = $( "#Work" ).val();
+			var Email = $( "#Email" ).val();
 			
-			if(! (University && College && Work) ){
+			if(! (University && Work && Email) ){
 				alert("請確實填寫三筆資料。")
 			}
 			
 			var url = 	"https://docs.google.com/forms/d/1vnCtNvQiDtedELATDg-17CuoLCRhGwYp3OdMZxeTSQ4/formResponse" +
 						"?entry.1733193242=" + escape(University) + 
-						"&entry.1328942373=" + escape(College) +
-						"&entry.2106173070=" + escape(Work) +
+						"&entry.1328942373=" + escape(Work) +
+						"&entry.2106173070=" + escape(Email) +
 						"&submit=Submit";
 						
 			$.getScript(url);
