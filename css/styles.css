@@ -4,6 +4,12 @@ body {
     background-size:   cover;                      
     background-repeat: no-repeat;
     background-position: center center;            /* optionally, center the image */
+	height: 2000px
+}
+
+.centerGroup {
+	display: block;
+	text-align: center;
 }
 
 .logo{
@@ -57,10 +63,6 @@ body {
     margin-right: auto;
 	text-align: left;
 
-}
-
-.centerGroup {
-	text-align: center;
 }
 
 .inputDiv{
