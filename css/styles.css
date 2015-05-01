@@ -110,6 +110,7 @@ body {
 	font-weight:bold;
 	padding: 14px 48px;
 	text-decoration:none;
+	-webkit-appearance: none;
 }
 
 .sendButton:active {
