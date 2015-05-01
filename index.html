@@ -16,8 +16,8 @@
 	<body>
 		<div class="centerGroup">
 			<div class="logosDiv">
-				<a href="#"> <img class="logo" src="img/leftLogo.png" /> </a>
-				<a href="#"> <img class="logo" src="img/rightLogo.jpg" /> </a>
+				<a href="https://m.facebook.com/designjit?__mref=message_bubble"> <img class="logo" src="img/leftLogo.png" /> </a>
+				<a href="http://www.yodex.com.tw/"> <img class="logo" src="img/rightLogo.jpg" /> </a>
 			</div>
 			<div id="sloganDiv" class="sloganDiv">
 				<label class="slogan" >　人人評審來投票</label>
@@ -64,6 +64,11 @@
 		function start(){
 			$("#contentDiv").html(inputHtmlStr);
 			$("#inputTextDiv").html(sendBtnHtmlStr);
+			
+			$( "#University" ).autocomplete({
+			  source: values
+			});
+			$( "#University" ).attr("autocomplete", "on");
 		}
 		
 		/*
@@ -75,10 +80,10 @@
 			票選結果將另行公佈於即時設計網站及粉絲專頁，待結果出爐，我們也會寄信通知您票選結果！
 		</label>
 		<div class="linkText">
-			<a href="#" >進入粉專</a> / <a href="#" >進入官網</a>
+			<a href="https://m.facebook.com/designjit?__mref=message_bubble" >進入粉專</a> / <a href="http://www.yodex.com.tw/" >進入官網</a>
 		</div>
 		*/
-		var resultCoverHtmlStr = "<label class=\"coverText\">票選結果將另行公佈於即時設計網站及粉絲專頁，待結果出爐，我們也會寄信通知您票選結果！</label><div class=\"linkText\"><a href=\"#\" >進入粉專</a> / <a href=\"#\" >進入官網</a></div>";
+		var resultCoverHtmlStr = "<label class=\"coverText\">票選結果將另行公佈於即時設計網站及粉絲專頁，待結果出爐，我們也會寄信通知您票選結果！</label><div class=\"linkText\"><a href=\"https://m.facebook.com/designjit?__mref=message_bubble\" >進入粉專</a> / <a href=\"http://www.yodex.com.tw/\" >進入官網</a></div>";
 		
 		function send(){
 			var University = $( "#University" ).val();
@@ -87,6 +92,7 @@
 			
 			if(! (University && Work && Email) ){
 				alert("請確實填寫三筆資料。")
+				return;
 			}
 			
 			var url = 	"https://docs.google.com/forms/d/1vnCtNvQiDtedELATDg-17CuoLCRhGwYp3OdMZxeTSQ4/formResponse" +
@@ -102,8 +108,5 @@
 			$("#inputTextDiv").html("");
 		}
 		
-		$( "#University" ).autocomplete({
-		  source: values
-		});
 	</script>
 </html>
